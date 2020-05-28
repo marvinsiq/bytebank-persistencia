@@ -1,4 +1,4 @@
-import 'package:bytebank/database/app_database.dart';
+import 'package:bytebank/database/dao/contact_dao.dart';
 import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/screens/contact_form.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,6 +10,9 @@ class ContactsList extends StatefulWidget {
 }
 
 class _ContactsListState extends State<ContactsList> {
+
+  final ContactDAO _dao = ContactDAO();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +21,7 @@ class _ContactsListState extends State<ContactsList> {
       ),
       body: FutureBuilder<List<Contact>>(
         initialData: List(),
-        future: findAll(),
+        future: _dao.findAll(),
         //future: Future.delayed(Duration(seconds: 2)).then((value) => findAll()), // Para testar a tela de loading
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
@@ -54,11 +57,13 @@ class _ContactsListState extends State<ContactsList> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(
+          Navigator.of(context)
+              .push(
             MaterialPageRoute(
               builder: (context) => Contactform(),
             ),
-          ).then((value) {
+          )
+              .then((value) {
             setState(() {
               widget.createState();
             });
