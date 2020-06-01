@@ -9,8 +9,8 @@ Módulos utilizados:
 * [http](https://pub.dev/packages/http)
 * [http interceptor](https://pub.dev/packages/http_interceptor) 
 
-Versão 1: Utiliza persistencia de dados internos (sqflite). 
+Versão 1: Utiliza persistencia de dados internos (sqflite).  
 ![App](bytebank2.gif)
 
-Versão 2: Utiliza persistencia de dados internos (sqflite) e uma Web API. 
+Versão 2: Utiliza persistencia de dados internos (sqflite) e uma Web API.   
 ![App](bytebank3.gif)
