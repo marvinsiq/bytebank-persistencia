@@ -8,6 +8,7 @@ Módulos utilizados:
 * [path](https://pub.dev/packages/path)
 * [http](https://pub.dev/packages/http)
 * [http interceptor](https://pub.dev/packages/http_interceptor) 
+* [uuid](https://pub.dev/packages/uuid)
 
 Versão 1: Utiliza persistencia de dados internos (sqflite).  
 ![App](bytebank2.gif)
